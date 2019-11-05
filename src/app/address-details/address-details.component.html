@@ -1,0 +1,23 @@
+<div *ngIf="!city; else forminfo">
+ <form [formGroup]="rForm" (ngSubmit)="concatAddress(rForm.value)">
+<div class="form-container">
+ <div class="row columns">
+ <label> City
+     <input type="text" formControlName="city">
+ </label><br><br>
+ <label> Street Name
+    <input type="text" formControlName="street">
+</label><br><br>
+<label> Country
+    <input type="text" formControlName="country">
+</label><br><br>
+<label for="validate">Please click below checkbox</label><br>
+<input type="checkbox" name="validate" formControlName="validate" value="1"> Accept Terms and Conditions
+<br><br><br>
+<input type="submit" class="button expanded" value="Submit Form"[disabled]="!rForm.valid">
+ </div>
+</div>
+</form>
+</div>
+
+      
